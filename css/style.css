@@ -1,0 +1,561 @@
+/*#region メイン */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "EB Garamond";
+  font-weight: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+.head {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.head .header-logo {
+  margin: 0;
+  width: 168px;
+  font-size: 100%;
+}
+
+.head .header-logo a {
+  height: auto;
+}
+
+.head .header-logo a img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+.humberger-nav {
+  display: none;
+}
+
+.head .header-nav {
+  display: block;
+}
+
+.head .header-nav .header-menu {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+}
+
+.head .header-nav .header-list {
+  display: list-item;
+  list-style-type: none;
+  margin-right: 30px;
+  font-size: 20px;
+}
+
+.head .header-nav .header-list a {
+  color: #333333;
+  opacity: 1;
+  text-decoration: none;
+}
+
+.head .header-nav .header-list a:hover {
+  color: #333333;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+  text-decoration: none;
+}
+
+.head .btnMenu {
+  display: none;
+}
+
+.top {
+  height: 680px;
+  background-image: url(../img/bg-header_pc.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.title {
+  font-size: 88px;
+  margin: 0;
+  opacity: 0;
+  animation-name: fadein;
+  animation-duration: 2s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.subtitle {
+  font-size: 18px;
+  font-family: "Noto Sans JP Regular";
+}
+
+.contaner {
+  padding: 70px 0;
+}
+
+.contaner .content-box {
+  padding: 0 30px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1170px;
+}
+
+.contaner .content-write {
+  font-size: 16px;
+  font-family: "Noto Sans JP Regular";
+  margin-right: 60px;
+  flex: 0 0 50%;
+}
+
+.content-write .content-write-list {
+  display: flex;
+  padding: 0;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.content-write-list .content-write-item {
+  list-style-type: none;
+  margin-right: 20px;
+}
+
+.content-write-list .content-write-item a {
+  color: #c32d4d;
+  font-family: "EB Garamond";
+}
+
+.content-write .profile .profile-img {
+  float: left;
+  width: 100px;
+  height: 110px;
+  margin-right: 10px;
+}
+
+.content-write .profile .profile-img img {
+  border-radius: 50%;
+  width: 100%;
+  height: auto;
+}
+
+.content-write .profile .profile-write p {
+  font-size: 14px;
+  margin: 0;
+  line-height: 1.8;
+}
+
+.content-write .profile .profile-write a {
+  color: #c32d4d;
+}
+
+.content-write .profile .profile-write a:hover {
+  text-decoration: none;
+}
+
+.content .contaner .content-box .content-image {
+  width: 100%;
+  text-align: center;
+}
+
+.footer {
+  height: 167px;
+  width: 100%;
+  background-color: #c32d4d;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-family: "EB Garamond";
+}
+
+.footer-nav .footer-nav-list {
+  display: flex;
+}
+
+.footer-nav-item {
+  margin-right: 30px;
+  list-style-type: none;
+  font-size: 20px;
+}
+
+.footer-nav-item a {
+  color: white;
+  opacity: 1;
+  text-decoration: none;
+}
+
+.footer-nav-item a:hover {
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+.copy-right p {
+  color: white;
+  opacity: 0.7;
+  font-size: 12px;
+}
+
+/*#endregion メイン */
+
+/* #region レスポンシブ */
+@media screen and (max-width: 700px) {
+  .head .header-logo {
+    width: 110px;
+  }
+
+  .humberger-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    visibility: hidden;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    background-color: #c32d4d;
+  }
+
+  .humberger-nav.show {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .head .humberger-nav .hunberger-menu {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-items: center;
+    width: 100%;
+    padding: 0;
+  }
+
+  .head .humberger-nav .humberger-list {
+    display: list-item;
+    list-style-type: none;
+    margin-bottom: 20px;
+    font-size: 20px;
+  }
+
+  .head .humberger-nav .humberger-list a {
+    color: white;
+    opacity: 1;
+    text-decoration: none;
+  }
+
+  .head .humberger-nav .humberger-list a:hover {
+    color: white;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+    text-decoration: none;
+  }
+
+  .head .header-nav {
+    display: none;
+  }
+
+  .head .btnMenu {
+    display: block;
+  }
+
+  .top {
+    height: 360px;
+    background-image: url(../img/bg-header_sp.jpg);
+  }
+
+  .title {
+    font-size: 48px;
+  }
+
+  .title.show {
+    visibility: hidden;
+  }
+
+  .contaner .content-box {
+    display: block;
+  }
+
+  .contaner .content-write {
+    margin-right: 0;
+    margin-bottom: 15px;
+    font-size: 15px;
+  }
+
+  .footer {
+    height: 137px;
+  }
+
+  .footer-nav-item {
+    font-size: 16px;
+  }
+
+  .btnMenu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 48px;
+    height: 48px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 0 0 0 8px;
+    outline: none;
+    border-style: none;
+    background-color: #c32d4d;
+    appearance: none;
+  }
+
+  .btnMenu-line {
+    position: relative;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 2px;
+    transition: all 0.4s;
+    background-color: white;
+  }
+
+  .btnMenu-line::before,
+  .btnMenu-line::after {
+    position: absolute;
+    display: inherit;
+    width: inherit;
+    height: inherit;
+    content: "";
+    transition: inherit;
+    border-radius: inherit;
+    background-color: inherit;
+  }
+
+  .btnMenu-line::before {
+    top: -8px;
+  }
+
+  .btnMenu-line::after {
+    top: 8px;
+  }
+
+  .btnMenu.active .btnMenu-line {
+    background-color: transparent;
+  }
+
+  .btnMenu.active .btnMenu-line::before {
+    top: 0;
+    background-color: white;
+    transform: rotate(45deg);
+  }
+
+  .btnMenu.active .btnMenu-line::after {
+    top: 0;
+    background-color: white;
+    transform: rotate(-45deg);
+  }
+}
+/* #endregion */
+
+/* #region メニュー*/
+.sub-top {
+  height: 200px;
+  background-image: url(../img/bg-page-header_pc.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  line-height: 1.1;
+}
+
+.sub-title {
+  font-size: 48px;
+  margin: 0;
+  opacity: 1;
+}
+
+.sib-subtitle {
+  font-size: 14px;
+  font-family: "Noto Sans JP Regular";
+}
+
+.Menu-list {
+  width: 100%;
+  margin-bottom: -50px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Menu-item:nth-child(3) {
+  margin-right: 0;
+}
+
+.Menu-item {
+  margin: 0 30px 25px 0;
+  flex: 0 0 calc((100% - 60px) / 3);
+}
+
+.menu-name {
+  font-size: 16px;
+  color: #c32d4d;
+}
+
+.menu-price {
+  font-size: 14px;
+}
+
+@media screen and (max-width: 700px) {
+  .sub-top {
+    background-image: url(../img/bg-page-header_sp.jpg);
+    height: 160px;
+  }
+
+  .sub-title {
+    font-size: 32px;
+  }
+
+  .sub-subtitle {
+    font-size: 11px;
+  }
+
+  .Menu-list {
+    justify-content: space-between;
+  }
+
+  .Menu-item {
+    margin-right: 0px;
+    flex: 0 0 calc((100% - 15px) / 2);
+  }
+}
+/* #endregion */
+
+/* #region アクセス*/
+#Access {
+  padding: 0 30px;
+  margin: 0 auto;
+  display: block;
+  justify-content: flex-start;
+  max-width: 1170px;
+  font-family: "Noto Sans JP Regular";
+}
+
+.Access-write {
+  margin-bottom: 30px;
+  font-size: 16px;
+}
+
+.Access-Address {
+  font-size: 15px;
+  margin-bottom: 25px;
+}
+
+.Access-Map iframe {
+  width: 100%;
+  height: 480px;
+}
+
+@media screen and (max-width: 700px) {
+  .Access-Map iframe {
+    height: 350px;
+  }
+}
+/* #endregion*/
+
+/* #region 採用 */
+
+.recruit-title {
+  text-align: center;
+  font-family: "Noto Sans JP Bold";
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.recruit-table {
+  margin-bottom: 50px;
+}
+
+.recruit-table table {
+  width: 100%;
+  border-spacing: 0px;
+  border-collapse: collapse;
+}
+
+.recruit-table tr {
+  border-bottom: solid 1px #dddd;
+}
+
+.recruit-table td {
+  display: table-cell;
+  color: #333333;
+  line-height: 1.8;
+  padding: 0;
+  font-size: 15px;
+  padding: 30px 10px;
+  font-family: "Noto Sans JP Regular";
+}
+
+.table-subtitle {
+  width: 20%;
+  font-family: "Noto Sans JP Bold";
+  font-weight: bold;
+}
+
+.recruit-table p {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.recruit-table ul {
+  padding: 0;
+  padding-left: 25px;
+}
+
+.recruit-table a {
+  color: #c32d4d;
+}
+
+@media screen and (max-width: 700px) {
+  .recruit-table td {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+
+  .recruit-table .table-subtitle {
+    margin-top: 20px;
+    margin-bottom: 5px;
+  }
+}
+/* #endregion */
